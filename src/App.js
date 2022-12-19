@@ -5,18 +5,22 @@ import AccountsView from './components/AccountsView';
 import CardsView from './components/CardsView';
 import LinesView from './components/LinesView';
 import Missing from './components/Missing';
-import Layout from './components/Layout';
+//import Layout from './components/Layout';
 import RequireAuth from './components/RequireAuth';
 import {Route, Routes} from 'react-router-dom';
+import './App.css';
+import {Layout} from 'antd';
+const {content} = Layout;
+
 
 function App() {
   
   return (
     <Routes>
-      <Route path="/" element={<Layout />} >
         <Route path="login" element={<Login />}/>
+        <Route path="/" element={<Layout />} >
         <Route element={<RequireAuth />} >
-          <Route path="products" element={<ProductsView />} />
+          <Route path="" element={<ProductsView />} />
           <Route path="accounts" element={<AccountsView />}/>
           <Route path="cards" element={<CardsView />}/>
           <Route path="lines" element={<LinesView />}/>

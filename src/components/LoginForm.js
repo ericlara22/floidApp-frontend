@@ -1,14 +1,12 @@
 import {useRef, useState, useEffect} from 'react';
-import {Link, useNavigate, useLocation } from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import useAuth from '../hooks/useAuth';
 import axios from '../api/axios';
 
 const LOGIN_URL = '/login';
 const Login = () => {
-    const {setAuth} = useAuth;
+    const {setAuth} = useAuth();
     const navigate = useNavigate();
-    const location = useLocation();
-    const from = location.state?.from?.pathname || "/";
 
     const userRef = useRef();
     const errorRef = useRef();
@@ -35,8 +33,8 @@ const Login = () => {
             console.log(products)
             setAuth({user, password, products}); 
             setUser('');
-            setPassword('');           
-            
+            setPassword('');
+            navigate('/');            
         } catch (error) {
             console.log(errorMsg);
             if (error?.response){
