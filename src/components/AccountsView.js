@@ -7,7 +7,7 @@ const AccountsView = () => {
     const {accounts} = auth.products.data;
     return (
 
-        <Grid padding="30px" margin="40px">
+        <Grid padding="30px" margin="40px" minWidth={"650px"}>
             <Paper elevation={4}>
                     <h1 className='cardTitle'>Cuentas</h1>
                 <Grid container direction="row" justifyContent="center" alignItems="center" paddingBottom={"50px"}>

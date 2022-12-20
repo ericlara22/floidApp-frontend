@@ -5,7 +5,9 @@ const CardData = ({type, number, name, CLP, USD}) => {
 
 
     return (
-        <Card style={{minWidth: "250px", boxSizing: "border-box", margin:"20px"}}>
+
+        <Grid>
+            <Card style={{minWidth: "250px", boxSizing: "border-box", margin:"20px"}} >
         <CardContent >
             <Typography component="p" variant="h5" fontFamily="Times New Roman, Times, serif" fontWeight="bold">
                 {name} {number}
@@ -31,7 +33,10 @@ const CardData = ({type, number, name, CLP, USD}) => {
 
 
         </CardContent>
-      </Card>        
+      </Card>  
+        </Grid>
+
+              
     )
 }
 

@@ -4,7 +4,7 @@ const Account = ({type, number, currency, balance}) => {
     
     return (
         <>
-
+        <Grid minWidth={"500px"}>
             <Card style={{minWidth: "500px", boxSizing: "border-box", margin:"20px"}}>
                 <CardContent >
                     <Typography component="p" variant="h6" fontFamily="Times New Roman, Times, serif" fontWeight="bold">
@@ -24,6 +24,8 @@ const Account = ({type, number, currency, balance}) => {
                     </Grid>
                 </CardContent>
             </Card>
+        </Grid>
+            
 
         </>
         

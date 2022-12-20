@@ -8,7 +8,7 @@ const LinesView = () => {
 
 
     return (
-        <Grid padding="30px" margin="40px">
+        <Grid padding="30px" margin="40px" minWidth={"600px"}>
             <Paper elevation={4}>
                 <h1 className='cardTitle'>Linea de crédito</h1>
                 <Grid container direction="row" justifyContent="center" alignItems="center" paddingBottom={"50px"}>
