@@ -1,6 +1,6 @@
 import Line from './Line';
 import useAuth from '../hooks/useAuth';
-import {Grid} from '@mui/material';
+import {Grid, Paper} from '@mui/material';
 
 const LinesView = () => {
     const {auth} = useAuth();
@@ -8,17 +8,16 @@ const LinesView = () => {
 
 
     return (
-        <>
-            <div>
-                <h1>Linea de crédito</h1>
-            </div>
-            <Grid container direction="row" justifyContent="center" alignItems="center">
-                {lines.map( line => (
-                <Line key={line.id} number={line.number} CLP={line.CLP}/>
-                ))}
-            </Grid>
-            
-        </>
+        <Grid padding="30px" margin="40px">
+            <Paper elevation={4}>
+                <h1 className='cardTitle'>Linea de crédito</h1>
+                <Grid container direction="row" justifyContent="center" alignItems="center" paddingBottom={"50px"}>
+                    {lines.map( line => (
+                    <Line key={line.id} number={line.number} CLP={line.CLP}/>
+                    ))}
+                </Grid>
+            </Paper>
+        </Grid>
         
     )
 }
