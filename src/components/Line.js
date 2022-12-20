@@ -1,14 +1,19 @@
 import Balance from './Balance';
-const Line = ({key, number, CLP}) => {
-    
+import {Typography, Card, CardContent} from '@mui/material';
+
+const Line = ({number, CLP}) => {    
     return (
-        <section>
-            <li key={key}>
-                <p>Número de Cuenta: {number}</p>
-                <p>Saldo:</p>
+        <>
+        <Card style={{minWidth: "500px", boxSizing: "border-box", margin:"20px"}}>
+            <CardContent >
+                <Typography component="p" variant="h5" fontFamily="Times New Roman, Times, serif" fontWeight="bold">
+                    Numero de cuenta: {number}
+                </Typography>
                 <Balance total={CLP.total} used={CLP.used} available={CLP.available}/>
-            </li>
-        </section>
+            </CardContent>
+        </Card>
+            
+        </>
         
     )
 }

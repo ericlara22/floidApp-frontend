@@ -49,6 +49,32 @@
     background-color: #666;
   }
 
-  p {
-    margin: "1px";
+
+
+  .mainLogo {
+    align-items: center;
+    height: auto;
+    padding: 5px;
+    width: 200px;
+    max-width: 100px;
+    max-height: 80px;
+  }
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+  .modal {
+    position: 'absolute';
+    top: '50%';
+    left: '50%';
+    transform: 'translate(-50%, -50%)';
+    width: 400;
+    background-color: 'background.paper';
+    border: '2px solid #000';
+    box-shadow: 24;
+    
   }

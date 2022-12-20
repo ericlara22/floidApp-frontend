@@ -6,6 +6,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
+import HomeIcon from '@mui/icons-material/Home';
 
 function Navbar() {
   const {setAuth} = useAuth();
@@ -32,7 +33,9 @@ function Navbar() {
           <Typography>
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
               <Button sx={{ my: 2, color: 'white', display: 'block' }}
-              onClick={()=> navigate('/')}>Home</Button>
+              onClick={()=> navigate('/')}>
+              <HomeIcon fontSize='large'/>
+              </Button>
             </Box>
           </Typography>
           <Typography>

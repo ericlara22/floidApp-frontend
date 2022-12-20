@@ -28,6 +28,38 @@
   color: #61dafb;
 }
 
+h1 {
+  font-family: Verdana, sans-serif;
+}
+
+p {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.regText {
+  font-family: "Times New Roman", Times, serif;
+  margin-top: auto;
+}
+
+.cardImg {
+  border-radius:"8px";
+  height: auto;
+  padding: 5px;
+  width: 200px;
+  min-width: 150px;
+  max-width: 150px;
+  min-height: 100px;
+  max-height: 100px;
+}
+
+.smallText{
+  text-align: left;
+}
+
+.balance{
+    text-align: right;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
