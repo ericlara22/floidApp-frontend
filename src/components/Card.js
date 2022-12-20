@@ -1,7 +1,7 @@
 import Balance from './Balance';
 
-const Card = ({key, type, number, name, CLP, USD}) => {
-    
+const CardData = ({key, type, number, name, CLP, USD}) => {
+
     return (
         <section>
             <li key={key}>
@@ -18,4 +18,4 @@ const Card = ({key, type, number, name, CLP, USD}) => {
     )
 }
 
-export default Card;
+export default CardData;

@@ -1,17 +1,14 @@
 import './App.css';
+import 'antd/dist/reset.css';
 import Login from './components/LoginForm';
 import ProductsView from './components/ProductsView';
 import AccountsView from './components/AccountsView';
 import CardsView from './components/CardsView';
 import LinesView from './components/LinesView';
 import Missing from './components/Missing';
-//import Layout from './components/Layout';
+import Layout from './components/Layout';
 import RequireAuth from './components/RequireAuth';
 import {Route, Routes} from 'react-router-dom';
-import './App.css';
-import {Layout} from 'antd';
-const {content} = Layout;
-
 
 function App() {
   

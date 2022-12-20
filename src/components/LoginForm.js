@@ -2,9 +2,15 @@ import {useRef, useState, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom'
 import useAuth from '../hooks/useAuth';
 import axios from '../api/axios';
+import './LoginForm.css';
+import {Grid, Paper, TextField, Box, Button} from '@mui/material'
+
 
 const LOGIN_URL = '/login';
 const Login = () => {
+
+    const paperStyle={padding:20, height:'70vh', width:400, margin:"20px auto"};
+
     const {setAuth} = useAuth();
     const navigate = useNavigate();
 
@@ -13,7 +19,7 @@ const Login = () => {
     
     const [user, setUser] = useState();
     const [password, setPassword] = useState();
-    const [errorMsg, setErrorMsg] = useState();
+    const [errorMsg, setErrorMsg] = useState(); 
 
     useEffect( () => {
         userRef.current.focus();
@@ -47,39 +53,63 @@ const Login = () => {
     }
 
     return (
-        <section>
-            <p ref={errorRef} className={errorMsg ? "error" : "offscreen"} aria-live="assertive">{errorMsg}</p>
-            <h1>Ingresa a tu banco</h1>
-            
-            <form onSubmit={handleSubmit}>
-                <label>
-                    <p>Ingresa tu RUT</p>
-                    <input 
-                        type="text" 
-                        id="username"
-                        ref={userRef}
-                        autoComplete="off"
-                        onChange={(e) => setUser(e.target.value)}
-                        value={user}
-                        required   
+
+        <Grid>
+
+            <Paper elevation={10} style={paperStyle}>
+            <form onSubmit={handleSubmit} className="login-form">
+            <h1 className="form-title">Ingresa a tu banco</h1>
+            <img src="Santander-logo.png" alt="Santander logo"/>
+                <Box
+                component="form"
+                sx={{
+                    '& > :not(style)': { m: 1, width: '25ch' },
+                }}
+                noValidate
+                autoComplete="off"
+                >
+                <TextField
+                    style={ {"marginTop":'30px'}}  
+                    fullWidth
+                    type="text" 
+                    label="Ingresa tu RUT"
+                    id="userId"
+                    variant="filled"
+                    size="normal"
+                    margin="normal"
+                    ref={userRef}
+                    autoComplete="off"
+                    onChange={(e) => setUser(e.target.value)}
+                    value={user}  />
+                <TextField 
+                    style={ {"marginTop":'40px'}}  
+                    id="password" 
+                    label="Ingresa tu contraseña" 
+                    variant="filled"
+                    type="password"
+                    margin="normal"  
+                    onChange={(e) => setPassword(e.target.value)}
+                    value={password}
+                    fullWidth
                     />
-                </label>
-                <label>
-                    <p>Contraseña</p>
-                    <input 
-                        type="password" 
-                        id="password"
-                        onChange={(e) => setPassword(e.target.value)}
-                        value={password}
-                        required   
-                    />
-                </label>
+                </Box>
                 <p>Recuerda usar tu clave de internet</p>
-                <button>Continuar</button>
+                <Button variant="contained" size="large" style={{padding:"18px", 'marginTop':"20px", 'fontSize': '18px', 'paddingLeft':"80px", 'paddingRight':"80px"}} onClick={handleSubmit}>Continuar</Button>
+
             </form>
-        </section>
+            </Paper>
+            <p ref={errorRef} className={errorMsg ? "error" : "offscreen"} aria-live="assertive">{errorMsg}</p>
+            
+
+        </Grid>
+
     )
 }
+
+
+
+            
+
 
 
 export default Login;
