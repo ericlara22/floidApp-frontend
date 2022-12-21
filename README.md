@@ -1,3 +1,10 @@
+# Instrucciones para prueba
+
+-Correr primero el backend para que funcione correctamente la conexión con la API
+-Luego, correr el comando `npm start`
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

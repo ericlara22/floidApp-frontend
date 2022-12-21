@@ -29,7 +29,7 @@ const Login = () => {
     const navigate = useNavigate();
 
     const userRef = useRef();
-    //const errorRef = useRef();
+
     
     const [user, setUser] = useState('');
     const [password, setPassword] = useState();
@@ -58,7 +58,10 @@ const Login = () => {
             navigate('/');
 
         } catch (error) {
-            if (error?.response){
+
+            if (error?.response?.status === 404){
+                setErrorMsg('No hay respuesta del servidor')
+            } else if (error?.response){
                 setErrorMsg(error.response.data.message)
             } else {
                 setErrorMsg('No hay respuesta del servidor')

@@ -2,10 +2,7 @@ import Balance from './Balance';
 import {Typography, Grid, Card, CardContent} from '@mui/material';
 
 const CardData = ({type, number, name, CLP, USD}) => {
-
-
     return (
-
         <Grid>
             <Card style={{minWidth: "250px", boxSizing: "border-box", margin:"20px"}} >
         <CardContent >
@@ -21,7 +18,6 @@ const CardData = ({type, number, name, CLP, USD}) => {
                 : <img className="cardImg" src="amex-logo.jpeg" alt="amex-logo"/>
             }
             <hr></hr>
-
             <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                 <Grid item xs={6}>
                     <Balance currency="CLP" total={CLP.total} used={CLP.used} available={CLP.available} />
@@ -30,14 +26,9 @@ const CardData = ({type, number, name, CLP, USD}) => {
                     <Balance currency="USD" total={USD.total} used={USD.used} available={USD.available} />
                 </Grid>
             </Grid>
-
-
         </CardContent>
       </Card>  
-        </Grid>
-
-              
+        </Grid>        
     )
 }
-
 export default CardData;
